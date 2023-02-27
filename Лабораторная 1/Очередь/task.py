@@ -43,7 +43,7 @@ class Queue:
         :return: Значение просмотренного элемента
         """
         if not isinstance(ind, int):
-            raise TypeError
+            TypeError("Не целочисленный тип данных")
         if not 0 <= ind <= len(self._queue):
             raise IndexError
 
@@ -51,8 +51,7 @@ class Queue:
 
     def clear(self) -> None:
         """ Очистка очереди. """
-        for queue in self._queue:
-            queue.clear()
+        self._queue.clear()
 
     def __len__(self):
         """ Количество элементов в очереди. """
