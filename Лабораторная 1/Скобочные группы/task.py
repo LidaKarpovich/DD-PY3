@@ -5,7 +5,21 @@ def check_brackets(brackets_row: str) -> bool:
     :param brackets_row: Входная строка для проверки
     :return: True, если последовательность корректна, False в противном случае
     """
-    ...  # TODO реализовать проверку скобочной группы
+    if len(brackets_row) % 2 != 0:
+        return False
+    para = {'(': ')'}
+    stack = []
+    for bracket in brackets_row:
+        if bracket in para.keys():
+            stack.append(bracket)
+        else:
+            if stack == []:
+                return False
+            open_bracket = stack.pop()
+            if bracket != para[open_bracket]:
+                return False
+
+    return stack == []
 
 
 if __name__ == '__main__':
