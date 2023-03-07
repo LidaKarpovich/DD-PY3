@@ -1,3 +1,6 @@
+"""
+My little Queue
+"""
 from typing import Any
 
 
@@ -5,19 +8,19 @@ class Queue:
     def __init__(self):
         """
         Очередь с помощью python list
-        Начало слева, конец справа
+        TODO Описать где начало и конец очереди
         """
-        self._queue: list = []
+        ...  # TODO инициализировать список
 
-    def enqueue(self, elem: Any) -> None:  # O(1)
+    def enqueue(self, elem: Any) -> None:
         """
         Добавление элемент в конец очереди
 
         :param elem: Элемент, который должен быть добавлен
         """
-        self._queue.append(elem)
+        ...  # TODO реализовать метод enqueue
 
-    def dequeue(self) -> Any:  # O(1)
+    def dequeue(self) -> Any:
         """
         Извлечение элемента из начала очереди.
 
@@ -25,11 +28,7 @@ class Queue:
 
         :return: Извлеченный с начала очереди элемент.
         """
-        for queue in self._queue:
-            if queue:
-                return self._queue.pop(0)
-
-        raise IndexError
+        ...  # TODO реализовать метод dequeue
 
     def peek(self, ind: int = 0) -> Any:
         """
@@ -42,17 +41,12 @@ class Queue:
 
         :return: Значение просмотренного элемента
         """
-        if not isinstance(ind, int):
-            TypeError("Не целочисленный тип данных")
-        if not 0 <= ind <= len(self._queue):
-            raise IndexError
-
-        return self._queue[ind]
+        ...  # TODO реализовать метод peek
 
     def clear(self) -> None:
         """ Очистка очереди. """
-        self._queue.clear()
+        ...  # TODO реализовать метод clear
 
     def __len__(self):
         """ Количество элементов в очереди. """
-        return len(self._queue)
+        ...  # TODO реализовать метод __len__
