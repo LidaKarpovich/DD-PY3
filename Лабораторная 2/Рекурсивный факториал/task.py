@@ -5,4 +5,11 @@ def factorial_recursive(n: int) -> int:
     :param n: Число, факториал которого нужно найти
     :return: n! - факториал числа n
     """
-    ...  # TODO реализовать рекурсивный алгоритм нахождения факториала
+    if not isinstance(n, int):
+        raise TypeError
+    if n < 0:
+        raise ValueError
+    if n < 2:
+        return 1
+    else:
+        return n * factorial_recursive(n - 1)
